@@ -1,0 +1,88 @@
+{
+  "version": "1.0.0",
+  "id": "@shopgate/shopware-myaccount-orderhistory",
+  "components": [
+    {
+      "id": "MyAccountAndroid",
+      "path": "frontend/portals/MyAccountAndroid",
+      "target": "nav-menu.imprint.after",
+      "type": "portals"
+    },
+    {
+      "id": "OrderHistoryAndroid",
+      "path": "frontend/portals/OrderHistoryAndroid",
+      "target": "nav-menu.home.before",
+      "type": "portals"
+    },
+    {
+      "id": "OrderHistoryiOS",
+      "path": "frontend/portals/OrderHistoryiOS",
+      "target": "nav-menu.logout.before",
+      "type": "portals"
+    },
+    {
+      "id": "MyAccountiOS",
+      "path": "frontend/portals/MyAccountiOS",
+      "target": "nav-menu.logout.before",
+      "type": "portals"
+    },
+    {
+
+      "type": "translations",
+      "path": "frontend/locale/de-DE.json",
+      "id": "locale/de-DE"
+    },
+    {
+      "type": "translations",
+      "path": "frontend/locale/en-US.json",
+      "id": "locale/en-US"
+    }
+  ],
+  "configuration": {
+    "showMyAccount": {
+      "type": "admin",
+      "destination": "frontend",
+      "default": true,
+      "params": {
+        "type": "checkbox",
+        "label": "Show 'My Account' link"
+      }
+    },
+    "showOrderHistory": {
+      "type": "admin",
+      "destination": "frontend",
+      "default": true,
+      "params": {
+        "type": "checkbox",
+        "label": "Show 'Order History' link"
+      }
+    },
+    "accountPathPartReplacement": {
+      "type": "admin",
+      "destination": "frontend",
+      "default": "Shopgate/account",
+      "params": {
+        "type": "text",
+        "label": "Replacement for account path"
+      }
+    },
+    "accountOrdersPathPartReplacement": {
+      "type": "admin",
+      "destination": "frontend",
+      "default": "Shopgate/accountOrders",
+      "params": {
+        "type": "text",
+        "label": "Replacement for account orders path"
+      }
+    },
+    "checkoutUrlPathPartToReplace": {
+      "type": "admin",
+      "destination": "frontend",
+      "default": "Shopgate/checkout",
+      "params": {
+        "type": "text",
+        "label": "The Part of the Checkout Path to Replace"
+      }
+    }
+  }
+}
