@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { I18n, InfoIcon, NavDrawer } from '@shopgate/engage/components';
 import connect from './connector';
-import MoreMenuItem from '../MoreMenueItem';
 
 /**
  * @param {Object} props Props
@@ -28,8 +27,8 @@ const AccountItem = (props) => {
 };
 
 AccountItem.propTypes = {
-  Item: PropTypes.oneOf([NavDrawer.Item, MoreMenuItem]).isRequired,
   icon: PropTypes.func,
+  Item: PropTypes.func,
   label: PropTypes.string,
   openAccountPage: PropTypes.func,
 };
@@ -38,6 +37,7 @@ AccountItem.defaultProps = {
   openAccountPage: () => {},
   label: '',
   icon: InfoIcon,
+  Item: NavDrawer.Item,
 };
 
 export default connect(AccountItem);

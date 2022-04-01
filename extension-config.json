@@ -4,13 +4,13 @@
   "components": [
     {
       "id": "AccountSectionAndroid",
-      "path": "frontend/portals/AccountAndroid",
+      "path": "frontend/portals/AccountSection",
       "target": "nav-menu.scanner.after",
       "type": "portals"
     },
     {
       "id": "AccountSectionIOS",
-      "path": "frontend/portals/AccountIOS",
+      "path": "frontend/portals/AccountSection",
       "target": "nav-menu.logout.before",
       "type": "portals"
     },
