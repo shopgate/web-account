@@ -1,6 +1,6 @@
 {
-  "version": "1.0.0",
-  "id": "@shopgate/shopware-myaccount-orderhistory",
+  "version": "0.1.0",
+  "id": "@apite/web-account",
   "components": [
     {
       "id": "AccountSectionAndroid",
@@ -9,14 +9,8 @@
       "type": "portals"
     },
     {
-      "id": "OrderHistoryiOS",
-      "path": "frontend/portals/OrderHistoryiOS",
-      "target": "nav-menu.logout.before",
-      "type": "portals"
-    },
-    {
-      "id": "MyAccountiOS",
-      "path": "frontend/portals/MyAccountiOS",
+      "id": "AccountSectionIOS",
+      "path": "frontend/portals/AccountIOS",
       "target": "nav-menu.logout.before",
       "type": "portals"
     },

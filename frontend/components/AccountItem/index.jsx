@@ -6,7 +6,7 @@ import MoreMenuItem from '../MoreMenueItem';
 
 /**
  * @param {Object} props Props
- * @returns {?JSX.Element}
+ * @returns {JSX.Element}
  */
 const AccountItem = (props) => {
   const {
