@@ -4,7 +4,7 @@ let cached;
 
 /**
  * Gets extension config or empty object on failure.
- * @returns {Object}
+ * @returns {WebAccount.Config}
  */
 function getConfig() {
   if (!cached) {

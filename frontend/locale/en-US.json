@@ -1,5 +1,8 @@
 {
-  "legacy-myaccount": {
-    "my-data": "My Data"
+  "account": {
+    "overviewTitle": "Overview",
+    "profileTitle": "Your profile",
+    "addressTitle": "Addresses",
+    "ordersTitle": "Orders"
   }
 }

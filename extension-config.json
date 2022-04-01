@@ -3,15 +3,9 @@
   "id": "@shopgate/shopware-myaccount-orderhistory",
   "components": [
     {
-      "id": "MyAccountAndroid",
-      "path": "frontend/portals/MyAccountAndroid",
-      "target": "nav-menu.imprint.after",
-      "type": "portals"
-    },
-    {
-      "id": "OrderHistoryAndroid",
-      "path": "frontend/portals/OrderHistoryAndroid",
-      "target": "nav-menu.home.before",
+      "id": "AccountSectionAndroid",
+      "path": "frontend/portals/AccountAndroid",
+      "target": "nav-menu.scanner.after",
       "type": "portals"
     },
     {
@@ -39,46 +33,82 @@
     }
   ],
   "configuration": {
-    "showMyAccount": {
+    "showOverview": {
       "type": "admin",
       "destination": "frontend",
       "default": true,
       "params": {
         "type": "checkbox",
-        "label": "Show 'My Account' link"
+        "label": "Show overview link"
       }
     },
-    "showOrderHistory": {
+    "showProfile": {
+      "type": "admin",
+      "destination": "frontend",
+      "default": false,
+      "params": {
+        "type": "checkbox",
+        "label": "Show overview link"
+      }
+    },
+    "showAddresses": {
       "type": "admin",
       "destination": "frontend",
       "default": true,
       "params": {
         "type": "checkbox",
-        "label": "Show 'Order History' link"
+        "label": "Show addresses link"
       }
     },
-    "accountPathPartReplacement": {
+    "showOrders": {
       "type": "admin",
       "destination": "frontend",
-      "default": "Shopgate/account",
+      "default": true,
+      "params": {
+        "type": "checkbox",
+        "label": "Show order history link"
+      }
+    },
+    "overviewReplacement": {
+      "type": "admin",
+      "destination": "frontend",
+      "default": "/login?redirectTo=frontend.account.home.page&",
       "params": {
         "type": "text",
-        "label": "Replacement for account path"
+        "label": "Replacement for account overview path"
       }
     },
-    "accountOrdersPathPartReplacement": {
+    "profileReplacement": {
       "type": "admin",
       "destination": "frontend",
-      "default": "Shopgate/accountOrders",
+      "default": "/login?redirectTo=frontend.account.profile.page&",
+      "params": {
+        "type": "text",
+        "label": "Replacement for account profile path"
+      }
+    },
+    "addressReplacement": {
+      "type": "admin",
+      "destination": "frontend",
+      "default": "/login?redirectTo=frontend.account.address.page&",
+      "params": {
+        "type": "text",
+        "label": "Replacement for account address path"
+      }
+    },
+    "ordersReplacement": {
+      "type": "admin",
+      "destination": "frontend",
+      "default": "/login?redirectTo=frontend.account.order.page&",
       "params": {
         "type": "text",
         "label": "Replacement for account orders path"
       }
     },
-    "checkoutUrlPathPartToReplace": {
+    "checkoutToReplace": {
       "type": "admin",
       "destination": "frontend",
-      "default": "Shopgate/checkout",
+      "default": "/login?",
       "params": {
         "type": "text",
         "label": "The Part of the Checkout Path to Replace"
