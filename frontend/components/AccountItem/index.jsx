@@ -28,7 +28,7 @@ const AccountItem = (props) => {
 
 AccountItem.propTypes = {
   icon: PropTypes.func,
-  Item: PropTypes.func,
+  Item: PropTypes.oneOfType([PropTypes.object, PropTypes.func, PropTypes.node]),
   label: PropTypes.string,
   openAccountPage: PropTypes.func,
 };

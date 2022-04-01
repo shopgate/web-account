@@ -1,9 +1,10 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
-import { AccountBoxIcon, BoxIcon, NavDrawer } from '@shopgate/engage/components';
+import { AccountBoxIcon, BoxIcon } from '@shopgate/engage/components';
 import AccountItem from '../../components/AccountItem';
 import { BookIcon, ChartIcon } from '../../icons';
 import {
+  LABEL_ACCOUNT_TITLE,
   LABEL_ACCOUNT_ADDRESS,
   LABEL_ACCOUNT_ORDERS,
   LABEL_ACCOUNT_OVERVIEW,
@@ -11,11 +12,19 @@ import {
 } from '../../constants';
 import getConfig from '../../helpers/getConfig';
 import connect from './connector';
+import TitledFragment from '../../components/TitledFragment';
 
 const {
   showOverview, showProfile, showAddresses, showOrders,
   overviewReplacement, profileReplacement, addressReplacement, ordersReplacement,
 } = getConfig();
+
+/**
+ * Android has both portals for printing, we need to make sure to use only one
+ * @param {string} name - name of the portal
+ * @return {boolean}
+ */
+const isDuplicate = name => !process.env.THEME.includes('ios') && name === 'nav-menu.logout.before';
 
 /**
  * Account holds all the User Account links
@@ -28,15 +37,15 @@ const {
  * @constructor
  */
 const Account = (props) => {
-  const { Section, isUserLoggedIn } = props;
+  const { name, Section, isUserLoggedIn } = props;
   const showAny = showOverview || showProfile || showAddresses || showOrders;
 
-  if (!isUserLoggedIn || !showAny) {
+  if (!isUserLoggedIn || !showAny || isDuplicate(name)) {
     return null;
   }
 
   return (
-    <Section>
+    <Section title={LABEL_ACCOUNT_TITLE}>
       {showOverview && (<AccountItem
         {...props}
         replacement={overviewReplacement}
@@ -67,10 +76,11 @@ const Account = (props) => {
 
 Account.propTypes = {
   isUserLoggedIn: PropTypes.bool.isRequired,
-  Section: PropTypes.oneOf([Fragment, NavDrawer.Section]),
+  name: PropTypes.string.isRequired,
+  Section: PropTypes.oneOfType([PropTypes.func, PropTypes.symbol]),
 };
 Account.defaultProps = {
-  Section: Fragment,
+  Section: TitledFragment,
 };
 
 export default connect(Account);

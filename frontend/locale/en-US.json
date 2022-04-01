@@ -1,5 +1,6 @@
 {
   "account": {
+    "mainHeading": "My account",
     "overviewTitle": "Overview",
     "profileTitle": "Your profile",
     "addressTitle": "Addresses",

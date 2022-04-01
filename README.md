@@ -1,51 +1,43 @@
-# Shopgate Connect - Shopware Myaccount / Order History Extension
+# Apite Web (checkout) Account
 
-Shows external 'My Account' & 'Order History' page in in-app browser
+Shows external Account pages in in-app browser once clicked. This extension is tailored for Shopware 6,
+but can be re-used for any other cart if the URL structure allows it.
 
 ## How to use it
-This extension allows the visibility of the account and order button to be configured. It also allows the part of the checkout url to be replaced to be configured as well as the replacements.
-The showMyAccount configuration controls the visibility of the account button. True shows the button when the user is logged in. False hides the button
+You can enable & disable any of the following links in the configuration section:
 ```json
 {
-  "showMyAccount": true
+  "showOverview": true,
+  "showProfile": true,
+  "showAddresses": true,
+  "showOrders": true
 }
 ```
 
-The showOrderHistory configuration controls the visibility of the orders button. True shows the button when the user is logged in. False hides the button
+As an example we can take this URL:
+```text
+http://localhost/sgconnect/login?token=XXX&affiliateCode=SGConnect_App
+```
+
+The `checkoutToReplace` configuration indicates the part of the checkout URL that should be replaced.
+
+By default, it configures to replace the `?login` part of the URL above.
 ```json
 {
-  "showOrderHistory": true
+  "checkoutToReplace": "/login?"
 }
 ```
 
-The orders and account URLs that the respective button links the user to are derivatives of the checkout url.
-The checkoutUrlPathPartToReplace configuration indicates the part of the checkout url that should be replaced.
+Let's take `overviewReplacement` configuration as example URL to be replaced:
 ```json
 {
-  "checkoutUrlPathPartToReplace": "Shopgate/checkout"
+  "overviewReplacement": "/login?redirectTo=frontend.account.home.page&"
 }
 ```
-
-The accountPathPartReplacement configuration provides the replacement part for the checkout URL to make it the URL to account information.
-```json
-{
-  "accountPathPartReplacement": "Shopgate/accountOrders"
-}
-
-```
-The accountOrdersPathPartReplacement configuration provides the replacement part for the checkout URL to make it the URL to order information.
-```json
-{
-  "accountOrdersPathPartReplacement": "Shopgate/accountOrders"
-}
+The configuration above will replace the URL for the overview link to become:
+```text
+http://localhost/sgconnect/login?redirectTo=frontend.account.home.page&token=XXX&affiliateCode=SGConnect_App
 ```
 
-## About Shopgate
-
-Shopgate is the leading mobile commerce platform.
-
-Shopgate offers everything online retailers need to be successful in mobile. Our leading
-software-as-a-service (SaaS) enables online stores to easily create, maintain and optimize native
-apps and mobile websites for the iPhone, iPad, Android smartphones and tablets.
-
-
+As you can see, after the customer becomes "logged in" in the inApp browser, they can be then redirect to the
+`Account Home Page`.
