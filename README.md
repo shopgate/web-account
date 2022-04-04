@@ -3,6 +3,8 @@
 Shows external Account pages in in-app browser once clicked. This extension is tailored for Shopware 6,
 but can be re-used for any other cart if the URL structure allows it.
 
+For the Android (GMD) theme we recommend turning on the menu subheadings: `showGmdMenuSubHeaders: true`
+
 ## How to use it
 You can enable & disable any of the following links in the configuration section:
 ```json
