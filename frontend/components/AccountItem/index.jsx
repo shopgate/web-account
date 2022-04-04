@@ -1,27 +1,20 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import I18n from '@shopgate/pwa-common/components/I18n';
-import Icon from '@shopgate/pwa-ui-shared/icons/InfoIcon';
+import { I18n, InfoIcon, NavDrawer } from '@shopgate/engage/components';
 import connect from './connector';
 
 /**
- * OrderHistory
  * @param {Object} props Props
- * @returns {JSX}
+ * @returns {JSX.Element}
  */
 const AccountItem = (props) => {
   const {
-    isUserLoggedIn,
     Item,
-    show,
     openAccountPage,
     icon,
     label,
   } = props;
 
-  if (!show || !isUserLoggedIn) {
-    return null;
-  }
   return (
     <Item
       label={label}
@@ -34,19 +27,17 @@ const AccountItem = (props) => {
 };
 
 AccountItem.propTypes = {
-  isUserLoggedIn: PropTypes.bool.isRequired,
-  Item: PropTypes.func.isRequired,
   icon: PropTypes.func,
+  Item: PropTypes.oneOfType([PropTypes.object, PropTypes.func, PropTypes.node]),
   label: PropTypes.string,
   openAccountPage: PropTypes.func,
-  show: PropTypes.bool,
 };
 
 AccountItem.defaultProps = {
   openAccountPage: () => {},
   label: '',
-  icon: Icon,
-  show: true,
+  icon: InfoIcon,
+  Item: NavDrawer.Item,
 };
 
 export default connect(AccountItem);

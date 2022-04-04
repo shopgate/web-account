@@ -1,21 +1,13 @@
-import { isUserLoggedIn } from '@shopgate/pwa-common/selectors/user';
-import { historyPush } from '@shopgate/pwa-common/actions/router';
-import fetchCheckoutUrl from '@shopgate/pwa-common-commerce/checkout/actions/fetchCheckoutUrl';
-import { FETCH_CHECKOUT_URL_TIMEOUT } from '@shopgate/pwa-common-commerce/checkout/constants';
-import { logger } from '@shopgate/pwa-core/helpers';
-import { CHECKOUT_PATH_PART_TO_REPLACE } from '../../constants';
+import { historyPush, logger } from '@shopgate/engage/core';
+import { FETCH_CHECKOUT_URL_TIMEOUT, fetchCheckoutUrl } from '@shopgate/engage/checkout';
+import getConfig from '../../helpers/getConfig';
 
 /**
  * Fetches Shopware checkout URL changes it to the URL of account page and redirects to that page.
  * @param {string} replacement URL part to be used as a replacement
  * @return {null}
  */
-export const openShopwareAccountPage = replacement => (dispatch, getState) => {
-  // Check if user is logged in.
-  if (!isUserLoggedIn(getState())) {
-    logger.warn('Will not fetch Shopware Account Page URL because user is not logged in');
-    return;
-  }
+export const openShopwareAccountPage = replacement => (dispatch) => {
   const started = Date.now();
   dispatch(fetchCheckoutUrl())
     .then((url) => {
@@ -23,8 +15,9 @@ export const openShopwareAccountPage = replacement => (dispatch, getState) => {
       if (Date.now() - started > FETCH_CHECKOUT_URL_TIMEOUT) {
         return;
       }
-      const linkUrl = replacement ? url.replace(CHECKOUT_PATH_PART_TO_REPLACE, replacement) : url;
-      // Open the checkout.
+      const { checkoutToReplace } = getConfig();
+      const linkUrl = replacement ? url.replace(checkoutToReplace, replacement) : url;
+      // Open the link
       dispatch(historyPush({ pathname: linkUrl }));
     })
     .catch(error => logger.error('Error fetching Shopware Account Page URL', error));
