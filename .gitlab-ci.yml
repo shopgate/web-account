@@ -50,8 +50,4 @@ publish to shopgate:
     - ARTIFACT=$(find . -type f -name "*.tar.gz" -print -quit)
     - mkdir temp
     - tar -xvf ${ARTIFACT} -C ./temp/
-    - cd temp/extension
-    - chmod u+x post-install.sh
-    # run npm so that post-install hook runs
-    - npm install
     - sgconnect extension upload temp --force
