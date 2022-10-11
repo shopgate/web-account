@@ -1,6 +1,6 @@
 {
   "name": "@apite/web-account",
-  "version": "0.1.0-beta.1",
+  "version": "1.0.0",
   "description": "Adds web (checkout) links to the account pages. Was designed with Shopware 6 in mind, but can be re-used.",
   "license": "Apache-2.0",
   "scripts": {
