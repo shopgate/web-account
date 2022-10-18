@@ -8,7 +8,7 @@
  * @property {boolean} showProfile
  * @property {boolean} showAddresses
  * @property {boolean} showOrders
- * @property {string} checkoutToReplace
+ * @property {string} urlSlugToReplace
  * @property {string} overviewReplacement
  * @property {string} profileReplacement
  * @property {string} addressReplacement

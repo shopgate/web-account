@@ -1,9 +1,9 @@
 {
   "name": "@apite/web-account",
-  "version": "1.0.0",
   "description": "Adds web (checkout) links to the account pages. Was designed with Shopware 6 in mind, but can be re-used.",
   "license": "Apache-2.0",
   "scripts": {
+    "init": "npm i",
     "lint": "eslint --parser babel-eslint --ignore-path ../.gitignore --ignore-path */.eslintignore --ext .js --ext .jsx .",
     "lint-fix": "eslint --fix --parser babel-eslint --ignore-path ../.gitignore --ignore-path */.eslintignore --ext .js --ext .jsx ."
   },
