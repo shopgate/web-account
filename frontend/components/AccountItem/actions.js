@@ -15,8 +15,8 @@ export const openShopwareAccountPage = replacement => (dispatch) => {
       if (Date.now() - started > FETCH_CHECKOUT_URL_TIMEOUT) {
         return;
       }
-      const { checkoutToReplace } = getConfig();
-      const linkUrl = replacement ? url.replace(checkoutToReplace, replacement) : url;
+      const { urlSlugToReplace } = getConfig();
+      const linkUrl = replacement ? url.replace(new RegExp(urlSlugToReplace, 'ig'), replacement) : url;
       // Open the link
       dispatch(historyPush({ pathname: linkUrl }));
     })
