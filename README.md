@@ -31,11 +31,12 @@ http://url.com/sgwebcheckout/login?token=XXX&affiliateCode=SGConnect_App
 
 The `urlSlugToReplace` configuration indicates the part of the checkout URL that should be replaced.
 
-By default, it configures to replace the `?login` part of the URL above.
+By default, it configures to replace the `/login?` part of the URL above. Note escaping special characters as 
+`urlSlugToReplace` uses a Regex expression.
 
 ```json
 {
-  "urlSlugToReplace": "/login?"
+  "urlSlugToReplace": "/login\\?"
 }
 ```
 

@@ -102,10 +102,10 @@
     "urlSlugToReplace": {
       "type": "admin",
       "destination": "frontend",
-      "default": "/login?",
+      "default": "/login\\?",
       "params": {
         "type": "text",
-        "label": "The Part of the Checkout Path to Replace"
+        "label": "The Part of the Checkout Path to Replace (it's a Regex expression)"
       }
     }
   }
