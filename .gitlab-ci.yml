@@ -5,6 +5,8 @@ stages:
 register package:
   image: dwdraju/alpine-curl-jq
   services: [ ]
+  tags:
+    - build-amd64
   stage: upload
   only:
     - tags
@@ -38,6 +40,8 @@ register package:
 publish to shopgate:
   image: registry.gitlab.com/apite/shopgate/connect-engage/images/webc:latest
   services: [ ]
+  tags:
+    - build-amd64
   stage: deploy
   only:
     - tags
