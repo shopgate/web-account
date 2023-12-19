@@ -1,5 +1,5 @@
 {
-  "version": "1.2.0",
+  "version": "1.2.1",
   "id": "@apite/web-account",
   "components": [
     {
@@ -15,15 +15,29 @@
       "type": "portals"
     },
     {
-
+      "id": "locale/de-DE",
       "type": "translations",
-      "path": "frontend/locale/de-DE.json",
-      "id": "locale/de-DE"
+      "path": "frontend/locale/de-DE.json"
     },
     {
+      "id": "locale/en-US",
       "type": "translations",
-      "path": "frontend/locale/en-US.json",
-      "id": "locale/en-US"
+      "path": "frontend/locale/en-US.json"
+    },
+    {
+      "id": "locale/es-ES",
+      "type": "translations",
+      "path": "frontend/locale/es-ES.json"
+    },
+    {
+      "id": "locale/fr-FR",
+      "type": "translations",
+      "path": "frontend/locale/fr-FR.json"
+    },
+    {
+      "id": "locale/it-IT",
+      "type": "translations",
+      "path": "frontend/locale/it-IT.json"
     }
   ],
   "configuration": {
