@@ -1,9 +1,9 @@
 {
-  "account" : {
-    "mainHeading" : "Mi cuenta",
-    "overviewTitle" : "Vista de conjunto",
-    "profileTitle" : "Su perfil",
-    "addressTitle" : "Direcciones",
-    "ordersTitle" : "Pedidos"
+  "account": {
+    "mainHeading": "Mi cuenta",
+    "overviewTitle": "Vista de conjunto",
+    "profileTitle": "Su perfil",
+    "addressTitle": "Direcciones",
+    "ordersTitle": "Pedidos"
   }
 }

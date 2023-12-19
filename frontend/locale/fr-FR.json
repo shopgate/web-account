@@ -1,9 +1,9 @@
 {
-  "account" : {
-    "mainHeading" : "Mon compte",
-    "overviewTitle" : "Vue d'ensemble",
-    "profileTitle" : "Votre profil",
-    "addressTitle" : "Adresses",
-    "ordersTitle" : "Commandes"
+  "account": {
+    "mainHeading": "Mon compte",
+    "overviewTitle": "Vue d'ensemble",
+    "profileTitle": "Votre profil",
+    "addressTitle": "Adresses",
+    "ordersTitle": "Commandes"
   }
 }
