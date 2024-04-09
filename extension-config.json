@@ -1,5 +1,5 @@
 {
-  "version": "1.2.1",
+  "version": "1.3.0",
   "id": "@apite/web-account",
   "components": [
     {
@@ -120,6 +120,26 @@
       "params": {
         "type": "text",
         "label": "The Part of the Checkout Path to Replace (it's a Regex expression)"
+      }
+    },
+    "customerLinks": {
+      "type": "admin",
+      "destination": "frontend",
+      "default": {
+        "linkOne": {
+          "show": false,
+          "label": "Link One",
+          "replacement": "/login?redirectTo=frontend.account.order.page&"
+        },
+        "linkTwo": {
+          "show": false,
+          "label": "Link Two",
+          "replacement": "/login?redirectTo=https://website.com/account/profile&"
+        }
+      },
+      "params": {
+        "type": "json",
+        "label": "Custom link to be displayed when a customer is logged in"
       }
     }
   }
