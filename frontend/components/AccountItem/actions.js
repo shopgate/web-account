@@ -3,11 +3,11 @@ import { FETCH_CHECKOUT_URL_TIMEOUT, fetchCheckoutUrl } from '@shopgate/engage/c
 import getConfig from '../../helpers/getConfig';
 
 /**
- * Fetches Shopware checkout URL changes it to the URL of account page and redirects to that page.
+ * Fetches checkout URL, changes it to the URL of configured page and redirects to that page.
  * @param {string} replacement URL part to be used as a replacement
- * @return {null}
+ * @return {Function}
  */
-export const openShopwareAccountPage = replacement => (dispatch) => {
+export const openPage = replacement => (dispatch) => {
   const started = Date.now();
   dispatch(fetchCheckoutUrl())
     .then((url) => {
@@ -20,5 +20,5 @@ export const openShopwareAccountPage = replacement => (dispatch) => {
       // Open the link
       dispatch(historyPush({ pathname: linkUrl }));
     })
-    .catch(error => logger.error('Error fetching Shopware Account Page URL', error));
+    .catch(error => logger.error('Error fetching Web Account Page URL', error));
 };
