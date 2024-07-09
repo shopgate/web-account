@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { openShopwareAccountPage } from './actions';
+import { openPage } from './actions';
 
 /**
  * Passes down string replacement to pipeline call
@@ -9,7 +9,7 @@ import { openShopwareAccountPage } from './actions';
  * @returns {Object}
  */
 const mapDispatchToProps = (dispatch, { replacement }) => ({
-  openAccountPage: () => dispatch(openShopwareAccountPage(replacement)),
+  openAccountPage: () => dispatch(openPage(replacement)),
 });
 
 export default connect(null, mapDispatchToProps);
