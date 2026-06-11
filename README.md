@@ -1,4 +1,4 @@
-# Apite Web (checkout) Account
+# Shopgate Web (checkout) Account developed by Apite, maintained by Shopgate
 
 Shows external Account pages in in-app browser once clicked.
 

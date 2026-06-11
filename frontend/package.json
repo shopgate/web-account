@@ -1,5 +1,5 @@
 {
-  "name": "@apite/web-account",
+  "name": "@shopgate/web-account",
   "description": "Adds web (checkout) links to the navigation bar",
   "license": "Apache-2.0",
   "scripts": {

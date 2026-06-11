@@ -1,6 +1,6 @@
 {
-  "version": "1.3.2",
-  "id": "@apite/web-account",
+  "version": "2.0.0",
+  "id": "@shopgate/web-account",
   "components": [
     {
       "id": "AccountSectionAndroid",
